@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minecraft 1.8.8 - Zepva Games</title>
+<style>
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:#080b12;
+  color:white;
+  font-family:Arial,sans-serif;
+}
+header {
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  background:#191c29;
+}
+a { color:#65e6a2; text-decoration:none; }
+#game {
+  width:100%;
+  height:calc(100vh - 55px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+button {
+  padding:13px 25px;
+  border:0;
+  border-radius:8px;
+  background:#65e6a2;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+<header>
+  <a href="../index.html">← Ana Sayfa</a>
+  <span>Minecraft 1.8.8</span>
+  <button onclick="document.documentElement.requestFullscreen()">
+    Tam Ekran
+  </button>
+</header>
+<div id="game">
+  <div>
+    <h2>⛏️ Minecraft Singleplayer</h2>
+    <p>Oyun istemcisi yüklenmeyi bekliyor.</p>
+  </div>
+</div>
+</body>
+</html>
