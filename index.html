@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zepva Games - Oyun Portalı</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #10121b;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  height: 75px;
+  background: #191c29;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  border-bottom: 1px solid #292d3e;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #65e6a2;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 75px 20px;
+  background: linear-gradient(135deg,#202c3c,#17182b);
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #b5bacb;
+}
+
+.search {
+  margin-top: 25px;
+  padding: 14px;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #363d52;
+  border-radius: 10px;
+  background: #10121b;
+  color: white;
+  font-size: 16px;
+}
+
+.games {
+  padding: 45px 7%;
+}
+
+.games h2 {
+  margin-bottom: 25px;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 22px;
+}
+
+.game {
+  background: #1c2030;
+  border: 1px solid #30364a;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: .2s;
+}
+
+.game:hover {
+  transform: translateY(-5px);
+  border-color: #65e6a2;
+}
+
+.game img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+}
+
+.game-info {
+  padding: 18px;
+}
+
+.game-info h3 {
+  margin-bottom: 10px;
+}
+
+.game-info p {
+  color: #aeb5c7;
+  font-size: 14px;
+  margin-bottom: 17px;
+}
+
+.game-info a {
+  display: block;
+  background: #65e6a2;
+  color: #10121b;
+  padding: 11px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #858da3;
+  border-top: 1px solid #292d3e;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ZEPVA GAMES</div>
+  <nav>
+    <a href="#">Ana Sayfa</a>
+    <a href="#games">Oyunlar</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Oyun Dünyasına Hoş Geldin!</h1>
+  <p>En sevdiğin oyunları tarayıcından ücretsiz oyna.</p>
+  <input class="search" id="search"
+  placeholder="Oyun ara..." oninput="searchGames()">
+</section>
+
+<section class="games" id="games">
+  <h2>🎮 Popüler Oyunlar</h2>
+
+  <div class="game-grid" id="gameGrid">
+
+    <div class="game" data-name="minecraft">
+      <img src="https://images.unsplash.com/photo-1607513746994-51f730a44832?w=600"
+      alt="Minecraft tarzı blok dünyası">
+
+      <div class="game-info">
+        <h3>Minecraft</h3>
+        <p>Bloklardan kendi dünyanı oluştur!</p>
+        <a href="minecraft.html">Şimdi Oyna</a>
+      </div>
+    </div>
+
+    <div class="game" data-name="yakında">
+      <img src="https://placehold.co/600x350/252b40/ffffff?text=Coming+Soon"
+      alt="Yakında">
+
+      <div class="game-info">
+        <h3>Yakında!</h3>
+        <p>Yeni oyunlar çok yakında burada.</p>
+        <a href="#games">Yakında</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Zepva Games - Tüm hakları saklıdır.
+</footer>
+
+<script>
+function searchGames() {
+  const value = document.getElementById("search")
+    .value.toLowerCase();
+
+  document.querySelectorAll(".game").forEach(game => {
+    game.style.display =
+      game.dataset.name.includes(value) ? "" : "none";
+  });
+}
+</script>
+
+</body>
+</html>
